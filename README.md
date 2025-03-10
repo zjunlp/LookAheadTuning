@@ -148,7 +148,7 @@ First, clone the repository and organize the required files:
 ```
 git clone https://github.com/Unispac/shallow-vs-deep-alignment
 mv data shallow-vs-deep-alignment/finetuning_buckets/datasets
-mv Vanilla_FT.sh calculate_utility.py calculate_safe_rate.py shallow-vs-deep-alignment
+mv Vanilla_FT.sh eval shallow-vs-deep-alignment
 cd shallow-vs-deep-alignment
 ```
 
@@ -166,25 +166,25 @@ bash Vanilla_FT.sh
 
 Please note that the `input_file` parameters used here should point to the paths generated as `save_path` from steps 2, 3, and 4 in `Vanilla_FT.sh` during the training and inference process.
 
-**Utility**: Calculate the utility using the specified metrics:
+Utility: Calculate the utility using the specified metrics:
 
 ```
-python calculate_utility.py rouge1 --input_file <path>
-python calculate_utility.py gsm8k --input_file <path>
+python eval/calculate_utility.py rouge1 --input_file <path>
+python eval/calculate_utility.py gsm8k --input_file <path>
 ```
 
-**Safe Rate Assessment**: Provide scores using both keywords and GPT-based methods.
+Safe Rate Assessment: Provide scores using both keywords and GPT-based methods.
 
 Using keywords:
 
 ```
-python calculate_safe_rate.py --input_file <path> --mode keywords
+python eval/calculate_safe_rate.py --input_file <path> --mode keywords
 ```
 
 Using GPT (where `path_2` is where each data score is stored):
 
 ```
-python calculate_safe_rate.py --input_file <path_1> --mode gpt --output_file <path_2> --api_key <your_key>
+python eval/calculate_safe_rate.py --input_file <path_1> --mode gpt --output_file <path_2> --api_key <your_key>
 ```
 
 ## 🧐OURS
