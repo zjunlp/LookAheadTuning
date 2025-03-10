@@ -86,18 +86,18 @@ Run the `main.py` script from the command line with the appropriate arguments.
 
 #### Arguments
 
-- `--input_file`: **(Required)** Path to the input file.
-- `--output_file`: **(Required)** Path to the output file.
-- `--input_format`: **(Required)** Format of the input file. Choose either `json` or `jsonl`.
-- `--output_format`: **(Required)** Format of the output file. Choose either `json` or `jsonl`.
-- `--input_field`: **(Optional)** Field name for the input in the JSON objects. Default is `input`.
-- `--output_field`: **(Optional)** Field name for the output in the JSON objects. Default is `output`.
-- `--mode`: **(Required)** Processing mode. Choose either `real` or `virtual`.
+- `--input_file`: (Required) Path to the input file.
+- `--output_file`: (Required) Path to the output file.
+- `--input_format`: (Required) Format of the input file. Choose either `json` or `jsonl`.
+- `--output_format`: (Required) Format of the output file. Choose either `json` or `jsonl`.
+- `--input_field`: (Optional) Field name for the input in the JSON objects. Default is `input`.
+- `--output_field`: (Optional) Field name for the output in the JSON objects. Default is `output`.
+- `--mode`: (Required) Processing mode. Choose either `real` or `virtual`.
   - **Real Mode**:
-    - `--m`: **(Optional)** Number of tokens to preview.
-    - `--tokenizer_path`: **(Optional)** Path to the model tokenizer.
+    - `--m`: Number of tokens to preview.
+    - `--tokenizer_path`: Path to the model tokenizer.
   - **Virtual Mode**:
-    - `--P`: **(Optional)** Predefined string to insert.
+    - `--P`: Predefined string to insert.
 
 For more detailed parameters, refer to the `main.py` file.
 
@@ -166,7 +166,7 @@ bash Vanilla_FT.sh
 
 Please note that the `input_file` parameters used here should point to the paths generated as `save_path` from steps 2, 3, and 4 in `Vanilla_FT.sh` during the training and inference process.
 
-Utility: Calculate the utility using the specified metrics:
+Utility Assessment: Calculate the utility using the specified metrics:
 
 ```
 python eval/calculate_utility.py rouge1 --input_file <path>
