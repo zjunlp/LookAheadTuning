@@ -59,7 +59,7 @@ LookAhead Tuning comprises two data-centric, resource-efficient, simple, and eff
 2. Install Dependencies:
 
    ```bash
-   pip install transformers==4.44.2
+   pip install -r requirements.txt
    ```
 
 3. Download the Model:
