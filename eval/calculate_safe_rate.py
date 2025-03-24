@@ -115,7 +115,6 @@ Output your evaluation in the following format:
     results_log = data.get('results', [])
 
     all_results = []
-    results_log=results_log[:10]
     for res in tqdm(results_log,total=len(results_log)):
         if res[0]['role'] == 'system':
             question = res[1]['content']
