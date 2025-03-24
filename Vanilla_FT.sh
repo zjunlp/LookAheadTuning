@@ -1,5 +1,5 @@
-echo "gsm8k"
-echo "step...1"
+echo "Below are the training and inference steps for gsm8k:"
+echo "Step 1: Initiating model training..."
 accelerate launch --config_file=accelerate_configs/deepspeed_zero2.yaml \
   --num_processes 4 \
   finetune.py --model_name_or_path='../llama-2-7b-chat-hf' \
@@ -10,7 +10,7 @@ accelerate launch --config_file=accelerate_configs/deepspeed_zero2.yaml \
   --torch_dtype=bfloat16 --bf16=True --bf16_full_eval=True --save_strategy='no' \
   --sft_type='sft' \
   --use_warmup=False ;
-echo "step...2"
+echo "Step 2: Executing Utility Inference..."
 accelerate launch --num_processes=4 \
       eval_utility.py \
       --torch_dtype=bfloat16 \
@@ -21,7 +21,7 @@ accelerate launch --num_processes=4 \
       --evaluator='gsm8k' \
       --save_path="logs/Vanilla_FT/gsm8k/llama_2_7b_sft_False.json" \
       --do_sample=False;
-echo "step...3"
+echo "Step 3: Conducting Raw Safe Rate Inference..."
 accelerate launch  --num_processes=4 \
   eval_safety.py --model_name_or_path="logs/Vanilla_FT/gsm8k/llama_2_7b/sft/lr_2e-5_False" \
       --torch_dtype=bfloat16 \
@@ -32,7 +32,7 @@ accelerate launch  --num_processes=4 \
       --save_path='logs/Vanilla_FT/gsm8k/llama_2_7b_pure_bad_sft_False.json' \
       --eval_template='pure_bad' \
       --do_sample=False;
-echo "step...4"
+echo "Step 4: Performing Jailbreak Safe Rate Inference..."
 accelerate launch  --num_processes=4 \
   eval_safety.py --model_name_or_path="logs/Vanilla_FT/gsm8k/llama_2_7b/sft/lr_2e-5_False" \
       --torch_dtype=bfloat16 \
@@ -45,8 +45,8 @@ accelerate launch  --num_processes=4 \
       --num_perfix_tokens=3 \
       --do_sample=False;
 
-echo "samsum"
-echo "step...1"
+echo "Below are the training and inference steps for samsum:"
+echo "Step 1: Initiating model training..."
 accelerate launch --config_file=accelerate_configs/deepspeed_zero2.yaml \
   --num_processes 4 \
   finetune.py --model_name_or_path='../llama-2-7b-chat-hf' \
@@ -58,7 +58,7 @@ accelerate launch --config_file=accelerate_configs/deepspeed_zero2.yaml \
   --sft_type='sft' \
   --max_seq_length=1024 \
   --use_warmup=False ;
-echo "step...2"
+echo "Step 2: Executing Utility Inference..."
 accelerate launch --num_processes=4 \
       eval_utility.py \
       --torch_dtype=bfloat16 \
@@ -69,7 +69,7 @@ accelerate launch --num_processes=4 \
       --evaluator='rouge_1' \
       --save_path="logs/Vanilla_FT/samsum/llama_2_7b_sft_False.json" \
       --do_sample=False;
-echo "step...3"
+echo "Step 3: Conducting Raw Safe Rate Inference..."
 accelerate launch  --num_processes=4 \
   eval_safety.py --model_name_or_path="logs/Vanilla_FT/samsum/llama_2_7b/sft/lr_2e-5_False" \
       --torch_dtype=bfloat16 \
@@ -80,7 +80,7 @@ accelerate launch  --num_processes=4 \
       --save_path='logs/Vanilla_FT/samsum/llama_2_7b_pure_bad_sft_False.json' \
       --eval_template='pure_bad' \
       --do_sample=False;
-echo "step...4"
+echo "Step 4: Performing Jailbreak Safe Rate Inference..."
 accelerate launch  --num_processes=4 \
   eval_safety.py --model_name_or_path="logs/Vanilla_FT/samsum/llama_2_7b/sft/lr_2e-5_False" \
       --torch_dtype=bfloat16 \
