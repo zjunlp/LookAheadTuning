@@ -107,8 +107,8 @@ For more detailed parameters, refer to the `main.py` file.
 
 ```bash
 python main.py \
-    --input_file data/gsm8k/train.json \
-    --output_file data/gsm8k/train_real_6.json \
+    --input_file data/tasks/gsm8k/train.json \
+    --output_file data/tasks/gsm8k/train_real_6.json \
     --input_format jsonl \
     --output_format jsonl \
     --input_field question \
@@ -122,8 +122,8 @@ python main.py \
 
 ```bash
 python main.py \
-    --input_file data/gsm8k/train.json \
-    --output_file data/gsm8k/train_virtual.json \
+    --input_file data/tasks/gsm8k/train.json \
+    --output_file data/tasks/gsm8k/train_virtual.json \
     --input_format jsonl \
     --output_format jsonl \
     --input_field question \
