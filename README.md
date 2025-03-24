@@ -175,6 +175,8 @@ python eval/calculate_utility.py gsm8k --input_file <path>
 
 Safe Rate Assessment: Provide scores using both keywords and GPT-based methods.
 
+In our paper, we utilize the GPT-based method for Safe Rate Assessment to achieve more accurate evaluations.
+
 Using keywords:
 
 ```
