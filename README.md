@@ -2,7 +2,7 @@
 <h3 align="center"> Safer Language Models via Partial Answer Previews </h3>
 
 <p align="center">
-  <a href="google.com">📄arXiv</a>
+  <a href="https://arxiv.org/abs/2503.19041">📄arXiv</a>
 </p>
 
 
