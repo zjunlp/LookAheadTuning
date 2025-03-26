@@ -204,7 +204,15 @@ To apply our method, follow these steps:
 Please cite our repository if you use LookAhead Tuning in your work. Thanks!
 
 ```bibtex
-
+@misc{liu2025lookaheadtuningsaferlanguage,
+      title={LookAhead Tuning: Safer Language Models via Partial Answer Previews}, 
+      author={Kangwei Liu and Mengru Wang and Yujie Luo and Lin Yuan and Mengshu Sun and Ningyu Zhang and Lei Liang and Zhiqiang Zhang and Jun Zhou and Huajun Chen},
+      year={2025},
+      eprint={2503.19041},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.19041}, 
+}
 ```
 
 ## 🎉Contributors
